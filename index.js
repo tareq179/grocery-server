@@ -127,7 +127,7 @@ client.connect((err) => {
         ProductCollection.updateOne(
             {_id: ObjectId(req.params.id)},
             {$set:req.body},
-        );
+        )
         .then((result)=>{
             res.send(!!result.modifiedCount);
         });
@@ -137,7 +137,7 @@ client.connect((err) => {
         ReviewCollection.updateOne(
             {_id: ObjectId(req.params.id)},
             {$set:req.body},
-        );
+        )
         .then((result)=>{
             res.send(!!result.modifiedCount);
         });
