@@ -112,6 +112,12 @@ client.connect((err) => {
         });
     });
 
+    app.delete("/deleteAllCart",(req,res)=>{
+        CartCollection.deleteOne({})}).then((result)=>{
+            res.send(!!result.deletedCount)
+        });
+    });
+
     app.delete("/deleteReview/:id",(req,res)=>{
         ReviewCollection.deleteOne({_id: ObjectId(req.params.id)}).then((result)=>{
             res.send(!!result.deletedCount)
