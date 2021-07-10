@@ -41,6 +41,12 @@ client.connect((err) => {
         })
     })
 
+    app.post("/productById",(req,res)=>{
+        ProductCollection.find({_id:{$in: productId}}).toArray((err,docs)=>{
+            res.send(docs);
+        })
+    })
+
     app.get("/cart",(req,res)=>{
         CartCollection.find({email: req.query.email}).toArray((err,docs)=>{
             res.send(docs);
