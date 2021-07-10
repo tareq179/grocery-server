@@ -42,7 +42,7 @@ client.connect((err) => {
     })
 
     app.post("/productById",(req,res)=>{
-        ProductCollection.find({_id:{$in: productId}}).toArray((err,docs)=>{
+        ProductCollection.find({_id: req.params._id}).toArray((err,docs)=>{
             res.send(docs);
         })
     })
