@@ -113,7 +113,7 @@ client.connect((err) => {
     });
 
     app.delete("/deleteAllCart",(req,res)=>{
-        CartCollection.deleteOne({})}).then((result)=>{
+        CartCollection.deleteOne({}).then((result)=>{
             res.send(!!result.deletedCount)
         });
     });
